@@ -1,8 +1,9 @@
-import Header from "@/layouts/Header";
-import Main from "@/layouts/Main";
-import Sidebar from "@/layouts/Sidebar";
+import Header from "@/layout/Header";
+import Main from "@/layout/Main";
+import Sidebar from "@/layout/Sidebar";
 import localFont from "next/font/local";
 import "./globals.css";
+import LayoutProvider from "@/context/layout";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,10 +25,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen grid grid-rows-[auto_1fr] grid-cols-[auto_1fr]`}
+        className={`font-sans antialiased h-screen grid grid-rows-[auto_1fr] grid-cols-[240px_1fr]`}
       >
-        <Header />
-        <Sidebar />
+        <LayoutProvider>
+          <Header />
+          <Sidebar />
+        </LayoutProvider>
         <Main>
           {children}
         </Main>

@@ -25,3 +25,52 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.app {
+  font-size: 24px;
+  font-family: "";
+}
+
+.nav-node {
+  cursor: pointer;
+  padding: 8px;
+  background-color: white;
+  color: steelblue;
+  white-space: pre-wrap;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+.nav-node span:nth-child(2) {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.nav-node.nav-node--isopen,
+.nav-node:hover {
+  background-color: lightsteelblue;
+  color: white;
+}
+
+.nav-node.nav-node--isactive {
+  background-color: steelblue;
+  color: white;
+}
+
+.nav-node + .nav-node,
+.nav-node + .nav-group,
+.nav-group + .nav-node,
+.nav-group + .nav-group {
+  margin-top: 4px;
+}
+
+/* .mobile .nav-container .nav-group > .nav-group,
+.mobile .nav-container .nav-group > .nav-node {
+  display: none;
+}
+
+.mobile .nav-container > .nav-group > .nav-group,
+.mobile .nav-container > .nav-group > .nav-node {
+  display: block;
+} */
